@@ -9,18 +9,31 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Kirjoita jotain ja paina nappulaa!"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/textView"/>
+            android:id="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.9"/>
     <Button
-            android:text="Button"
+            android:text="Nappula"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/button"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintBottom_toTopOf="@+id/textView" android:onClick="testFunction"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="testFunction" app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintVertical_bias="0.100000024"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextTextPersonName" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
