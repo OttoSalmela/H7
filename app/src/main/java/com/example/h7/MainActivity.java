@@ -1,10 +1,11 @@
 package com.example.h7;
 
-import android.view.View;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,17 +16,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //this.testFunction();
-        text = (TextView) findViewById(R.id.textView);
-        input = (EditText) findViewById(R.id.editTextTextPersonName);
+
+        text = findViewById(R.id.textView);
+        input = findViewById(R.id.editTextTextPersonName);
+
+        input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                text.setText(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
 
-
-
-    public void testFunction (View v) {
-        System.out.println("Hello World!");
-        text.setText(input.getText().toString());
-
-    }
 }
